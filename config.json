@@ -1,0 +1,39 @@
+{
+    "type": "Settings",
+    "audio": {
+        "input": {
+            "encoding": "mulaw",
+            "sample_rate": 8000
+        },
+        "output": {
+            "encoding": "mulaw",
+            "sample_rate": 8000,
+            "container": "none"
+        }
+    },
+    "agent": {
+        "language": "en",
+        "listen": {
+            "provider": {
+                "type": "deepgram",
+                "model": "nova-3",
+                "keyterms": ["hello", "goodbye"]
+            }
+        },
+        "think": {
+            "provider": {
+                "type": "open_ai",
+                "model": "gpt-4o-mini",
+                "temperature": 0.7
+            },
+            "prompt": "You are a highly experienced registered nurse with 15 years of clinical experience. You specialize in patient education and can explain medical conditions, symptoms, and possible causes clearly and compassionately. You provide accurate, evidence-based information and speak in a calm, supportive, and professional tone — like a trusted nurse someone can call for guidance."
+        },
+        "speak": {
+            "provider": {
+                "type": "deepgram",
+                "model": "aura-2-thalia-en"
+            }
+        },
+        "greeting": "Hello! I'm Pujan. I'm here to help you answer your medical questions and provide health guidance. what would you like to know about today?"
+    }
+}
